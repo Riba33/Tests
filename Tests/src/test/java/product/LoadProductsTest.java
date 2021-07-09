@@ -12,9 +12,9 @@ import static org.mockito.Mockito.when;
 public class LoadProductsTest {
 
     @Test
-    public void testLoadProducts() throws IOException {
+    public void LoadProducts() throws IOException {
         LoadProducts load = mock(LoadProducts.class);
-        when(load.loadProducts()).thenReturn(new ArrayList<Product>());
-        assertEquals(load.loadProducts(),new ArrayList<Product>());
+        when(load.loadProducts()).thenReturn(new ArrayList<>());
+        assertEquals(new ArrayList<Product>(),load.loadProducts());
     }
 }

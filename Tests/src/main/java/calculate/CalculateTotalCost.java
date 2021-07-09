@@ -1,23 +1,24 @@
 package calculate;
 
-import product.LoadProducts;
 import product.Product;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 public class CalculateTotalCost {
-    public Double calculateTotalCost(String purchases) throws IOException {
+    public Double calculateTotalCost(String purchases, List<Product> listPrice) {
         double totalCoast = 0.00D;
-        Map<String,Integer> map = new CountPurchases().countPurchases(purchases);
-        List<Product> list = new LoadProducts().loadProducts();
-        for (Product product: list) {
-            int count = map.get(product.getName());
+        CountPurchases countPurchases = new CountPurchasesImpl();
+        Map<String,Integer> productNameToAmount = countPurchases.countPurchases(purchases);
+        for (Product product: listPrice) {
+            if (productNameToAmount.get(product.getName()) == null) continue;
+            int count = productNameToAmount.get(product.getName());
+
             int stockAmount = product.getStockAmount();
             Double price = product.getPrice();
             Double stockPrice = product.getStockPrice();
-            if (product.getStockAmount() > 0) {
+
+            if (stockAmount >= 1) {
                 totalCoast += (stockPrice * (count / stockAmount) + price * (count % stockAmount));
             }
             else totalCoast += price * count;

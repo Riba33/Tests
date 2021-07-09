@@ -19,7 +19,6 @@ public class Product {
     public Product(String name, Double price) {
         this.name = name;
         this.price = price;
-        //this.stockPrice = 0.00D;
         this.stockAmount = 0;
     }
     public Product(String name, Double price, Double stockPrice, int stockAmount) {
