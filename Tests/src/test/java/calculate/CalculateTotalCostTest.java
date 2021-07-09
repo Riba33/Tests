@@ -1,7 +1,7 @@
 package calculate;
 
 import org.junit.Test;
-import product.LoadPrice;
+import product.LoadPriceImpl;
 import product.Product;
 
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class CalculateTotalCostTest {
 
     {
         try {
-            listPrice = new LoadPrice().loadPrice();
+            listPrice = new LoadPriceImpl().loadPrice();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,7 +37,7 @@ public class CalculateTotalCostTest {
     }
     @Test
     public void should_DifferentResult_When_DifferentString() throws IOException {
-        LoadPrice load = mock(LoadPrice.class);
+        LoadPriceImpl load = mock(LoadPriceImpl.class);
         List<Product> listPriseAsMock = new ArrayList<>();
         listPriseAsMock.add(new Product("A",1.25,3.00,3));
         listPriseAsMock.add(new Product("B",4.25));
