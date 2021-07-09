@@ -11,9 +11,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoadProducts {
+public class LoadPrice {
     String url = "src/main/resources/price.json";
-    public List<Product> loadProducts() throws IOException {
+    public List<Product> loadPrice() throws IOException {
         Type listProductType = new TypeToken<ArrayList<Product>>(){}.getType();
         Gson gson = new Gson();
         return gson.fromJson(new String(Files.readAllBytes(Paths.get(url))),listProductType);
