@@ -16,7 +16,6 @@ public class CountPurchasesTest {
     public void should_NotNull_When_NullString() {
         CountPurchasesImpl countPurchases = mock(CountPurchasesImpl.class);
         when(countPurchases.countPurchases("")).thenReturn(new HashMap<>());
-        //assertEquals(count.countPurchases(anyString()),new HashMap<>());
         assertNotNull(countPurchases.countPurchases(""));
     }
     @Test

@@ -26,17 +26,17 @@ public class CalculateTotalCostTest {
     }
 
     @Test
-    public void should_Zero_WhenString_Null() {
-        assertEquals(0.0,cost.calculateTotalCost("",listPrice),0);
+    public void shouldZeroWhenStringNull() {
+        assertEquals(0.0,cost.calculateTotalCost(null,listPrice),0);
 
     }
     @Test
-    public void should_Zero_WhenString_IncludingAnyOutOfProduct() {
+    public void shouldZeroWhenStringIncludingAnyOutOfProduct() {
         assertEquals(0.0,cost.calculateTotalCost("1245qwertyuiop",listPrice),0);
 
     }
     @Test
-    public void should_DifferentResult_When_DifferentString() throws IOException {
+    public void shouldDifferentResultWhenDifferentString() throws IOException {
         LoadPriceImpl load = mock(LoadPriceImpl.class);
         List<Product> listPriseAsMock = new ArrayList<>();
         listPriseAsMock.add(new Product("A",1.25,3.00,3));

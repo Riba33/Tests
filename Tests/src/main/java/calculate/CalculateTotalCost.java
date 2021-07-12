@@ -10,6 +10,10 @@ public class CalculateTotalCost {
         double totalCoast = 0.00D;
         CountPurchases countPurchases = new CountPurchasesImpl();
         Map<String,Integer> productNameToAmount = countPurchases.countPurchases(purchases);
+        if (listPrice == null) {
+            System.out.println("Price is empty!");
+            return totalCoast;
+        }
         for (Product product: listPrice) {
             if (productNameToAmount.get(product.getName()) == null) continue;
             int count = productNameToAmount.get(product.getName());

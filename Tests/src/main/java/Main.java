@@ -12,7 +12,7 @@ public class Main {
         LoadPrice loadPrice = new LoadPriceImpl();
         List<Product> listPrice = loadPrice.loadPrice();
 
-        System.out.println(new CalculateTotalCost().calculateTotalCost(" ABCDABA",listPrice));
+        System.out.println(new CalculateTotalCost().calculateTotalCost(null,listPrice));
 
     }
 }

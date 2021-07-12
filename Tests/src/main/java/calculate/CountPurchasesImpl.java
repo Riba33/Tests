@@ -8,6 +8,10 @@ public class CountPurchasesImpl implements CountPurchases{
     @Override
     public Map<String,Integer> countPurchases(String purchases) {
         Map<String,Integer> productNameToAmount = new HashMap<>();
+        if (purchases == null) {
+            purchases = "";
+            System.out.println("Basket is empty!");
+        }
         String[] productNames = purchases.toUpperCase().trim().split("");
         Arrays.sort(productNames);
         String stringCompare = productNames[0];
