@@ -28,6 +28,8 @@ public class CalculateTotalCostTest {
     @Test
     public void shouldZeroWhenStringNull() {
         assertEquals(0.0,cost.calculateTotalCost(null,listPrice),0);
+        assertEquals(0.0,cost.calculateTotalCost(null,null),0);
+        assertEquals(0.0,cost.calculateTotalCost("",listPrice),0);
 
     }
     @Test
